@@ -1,0 +1,29 @@
+{
+  "main": {
+    "debug": true,
+    "game": "csgo",
+    "game_appid": "730",
+    "accept_buff_threshold": 0.75,
+    "min_price": 50,
+    "max_price": 3000000
+  },
+  "buff": {
+    "request_interval": 4,
+    "requests_kwargs": {
+      "headers": {
+        "cookie": "session=1-ykG-Dp0-OcIcd0POON5D4zBi8vSvazMgxU4e3XS6K-UI2030375537",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36",
+        "Referer": "https://buff.163.com/market/dota2",
+        "X-Requested-With": "XMLHttpRequest"
+      }
+    }
+  },
+  "steam": {
+    "request_interval": 30,
+    "requests_kwargs": {
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+      }
+    }
+  }
+}

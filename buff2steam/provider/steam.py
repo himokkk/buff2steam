@@ -55,14 +55,14 @@ class Steam:
         async with self.request_locks[caller][0]:
             elapsed = time.monotonic() - self.request_locks[caller][1]
             if elapsed < self.request_interval:
-                logger.debug(f'Waiting {self.request_interval - elapsed:.2f} seconds before next request({caller})...')
+                # logger.debug(f'Waiting {self.request_interval - elapsed:.2f} seconds before next request({caller})...')
                 await asyncio.sleep(self.request_interval - elapsed)
             self.request_locks[caller][1] = time.monotonic()
 
             res = await self.opener.request(*args, **kwargs)
 
             if res.status_code == 429 or 'too many requests' in res.text:
-                logger.debug(f'429 Too Many Requests: {caller}')
+                #logger.debug(f'429 Too Many Requests: {caller}')
                 raise buff2steam.exceptions.SteamAPI429Error()
 
             return res

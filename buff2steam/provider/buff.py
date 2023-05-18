@@ -45,7 +45,7 @@ class Buff:
         async with self.request_locks[url][0]:
             elapsed = time.monotonic() - self.request_locks[url][1]
             if elapsed < self.request_interval:
-                logger.debug(f'Waiting {self.request_interval - elapsed:.2f} seconds before next request({url})...')
+                # logger.debug(f'Waiting {self.request_interval - elapsed:.2f} seconds before next request({url})...')
                 await asyncio.sleep(self.request_interval - elapsed)
             self.request_locks[url][1] = time.monotonic()
 
